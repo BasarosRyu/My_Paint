@@ -1,0 +1,170 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: #ACAEAE;
+}
+
+/*----------------------------------------------*\
+-------------     Navbar    ----------------------
+\*----------------------------------------------*/
+nav {
+	border-bottom: 1px solid #000;
+	background-color: #5A6765;
+}
+
+.navbar-left {
+	width: 170px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+}
+
+.navbar-right {
+	width: 170px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.navbar-list {
+	margin: 0 auto;
+}
+
+.brand {
+	margin: 30px;
+}
+
+.buttonslist {
+	margin: 20px;
+}
+
+.buttonslistone {
+	margin-left: 5px;
+	margin-top: 100px;
+}
+
+.buttonslistthirst {
+	margin-left: 5px;
+	margin-top: 50px;
+}
+
+nav ul li {
+	list-style: none;
+	margin: 0 5px;
+}
+
+.btn {
+	width: 36px;
+	height: 36px;
+}
+
+a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: white;
+	font-family: sans-serif;
+}
+
+.nav-li {
+	width: 80%;
+	margin: 15px 10px;
+}
+
+#imgdashed {
+	transform: rotate(45deg);
+}
+
+#search, #open, #save, #sizeImg {
+	display: none;
+}
+
+.label {
+	background-color: #ACAEAE;
+	padding: 5px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+.label:hover {
+	background-color: crimson;
+}
+/*----------------------------------------------*\
+-------------     Page    ------------------------
+\*----------------------------------------------*/
+
+.calque {
+	margin-left: 200px;
+	margin-top: 30px;
+}
+
+canvas {
+	background-color: #fff;
+} 
+
+.active {
+	border: 3px solid crimson;
+}
+
+.title {
+	color: #5A6765;
+	margin-bottom: 20px;
+	background-color: #ACAEAE;
+}
+
+.listsup {
+	margin-left: 10px;
+}
+
+#image {
+	display:none;
+}
+
+
+/*----------------------------------------------*\
+-------------     "popup"    ---------------------
+\*----------------------------------------------*/
+
+#text-setup, #degrade-setup, #pipette-setup {
+	display: none;
+	position: absolute;
+	bottom: 20px;
+	left: 15px;
+	width: 80%;
+}
+
+#size-setup {
+	display: none;
+	position: absolute;
+	bottom: 40px;
+	right: 15px;
+	width: 80%;
+}
+
+#size {
+	position: absolute;
+	bottom: 150px;
+	right: 15px;
+	width: 80%;
+}
+
+.text-params {
+	color: #5A6765;
+	margin-bottom: 10px;
+	background-color: #ACAEAE;
+	width: 100%;
+}
+
+#preview {
+	width: 80%;
+	height: 40px;
+	border: 1px solid black;
+	box-shadow:2px 3px 3px #444444;
+}
+
+#symHor {
+	transform: rotate(90deg);
+}

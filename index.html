@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>My Paint</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+</head>
+<body>
+	<!-- navbar de gauche -->
+	<nav class="navbar-left">
+		<ul class="navbar-list">
+			<li>
+				<div class="brand">
+					<a href="">My Paint</a>
+				</div>
+			</li>
+		</ul>
+		
+		<ul class="navbar-list buttonslistone">
+			<li class="nav-li"> Épaisseur : 
+				<select id="thickness">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="4">4</option>
+					<option value="6">6</option>
+					<option value="8">8</option>
+					<option value="10">10</option>
+					<option value="25">25</option>
+					<option value="50">50</option>
+					<option value="100">100</option>
+				</select>
+			</li>
+			<li class="nav-li"> Couleur : 
+				<input type="color" id="color" value="#000000"/>
+			</li>
+		</ul>
+		<ul class="navbar-list buttonslist">
+			<li>
+				<button class="btn btn-paint" id="crayon"><img src="pictures/crayon.png"/></button>
+				<button class="btn btn-paint" id="gomme"><img src="pictures/eraser.png"/></button>
+				<button class="btn btn-paint" id="line"><img src="pictures/line.png"/></button>
+			</li>
+			<li>
+				<button class="btn btn-paint" id="recvide"><img src="pictures/rectanglevide.png"/></button>
+				<button class="btn btn-paint" id="circlevide"><img src="pictures/cerclevide.png"/></button>
+				<button class="btn btn-paint" id="trianglevide"><img src="pictures/triangle.png"/></button>
+			</li>
+			<li>
+				<button class="btn btn-paint" id="rec"><img src="pictures/rectangle.png"/></button>
+				<button class="btn btn-paint" id="circle"><img src="pictures/cercle.png"/></button>
+				<button class="btn btn-paint" id="triangle"><img src="pictures/up-arrow.png"/></button>			
+			</li>
+			<li>
+				<button class="btn btn-paint" id="degrade"><img src="pictures/degrade.png"/></button>
+				<button class="btn btn-paint" id="background"><img src="pictures/paint-roller.png"/></button>
+				<button class="btn btn-paint" id="text"><img src="pictures/font.png"/></button>
+			</li>
+			<li>
+				<button class="btn btn-paint" id="pipette"><img src="pictures/pipette.png"/></button>
+				<button class="btn" id="symHor"><img src="pictures/flip.png"/></button>
+				<button class="btn" id="symVer"><img src="pictures/flip.png"/></button>
+			</li>
+			<li>
+				<button class="btn btn-contour active" id="solid"><img src="pictures/solid.png"/></button>
+				<button class="btn btn-contour" id="dashed"><img src="pictures/dashed.png" id="imgdashed"/></button>
+				<button class="btn btn-contour" id="dotted"><img src="pictures/dotted.png"/></button>
+			</li>
+
+			<!-- div invisible pour les options de certains boutons-->
+			<div id="degrade-setup">
+				<div>
+					Couleur une : <input type="color" id="color_one" value="#000000"/>
+				</div>
+				<div>
+					Couleur deux : <input type="color" id="color_two" value="#ffffff"/>	
+				</div>
+			</div>
+
+			<div id="text-setup">
+				Font : 
+				<div id="font" class="text-params" contenteditable="true">Arial</div>
+				Size : 
+				<div >
+					<select class="text-params" id="text-size">
+						<option value="8">8</option>
+						<option value="10">10</option>
+						<option value="12">12</option>
+						<option value="14">14</option>
+						<option value="16">16</option>
+						<option value="18">18</option>
+						<option value="20">20</option>
+						<option value="24">24</option>
+						<option value="36">36</option>
+						<option value="40">40</option>
+					</select>
+				</div>
+				Contenu : 
+				<div id="value" class="text-params" contenteditable="true">Contenu</div>
+			</div>
+
+			<div id="pipette-setup">
+				<div>Prévisualisation :</div>
+				<div id="preview"></div>
+				<div>RGB : <input class="text-params" type="text" id="rgb" /></div>
+				<div>HEX : <input class="text-params" type="text" id="hex" /></div>
+			</div>
+
+
+		</ul>
+	</nav>
+
+	<!-- navbar de droite -->
+	<nav class="navbar-right">
+		<ul class="navbar-list buttonslistthirst">
+			<li class="nav-li"> Nom du fichier : 
+				<div id="title" class="title" contenteditable="true">sanstitre</div>
+			</li>
+
+			<li class="nav-li listsup">
+				<label class="label" for="save">Enregistrer</label>
+				<button name=save" id="save"></button>
+			</li>
+			<li class="nav-li">
+				<label class="label" for="search">Choisir une image</label>
+				<input type="file" name="search" id="search" accept=".jpg, .jpeg, .png"/>
+
+			</li>
+			<li class="nav-li">
+				<label class="label" for="open">Ouvrir</label>
+				<button name="open" id="open"></button>
+			</li>
+			
+			<li class="nav-li" id="size">
+				<label class="label" for="sizeImg">Taille de l'image</label>
+				<button name="sizeImg" id="sizeImg"></button>
+			</li>
+
+			<!-- contenu caché, lié à la taille de l'image-->
+			<div id="size-setup">
+				<div>
+					longueur : <input class="text-params" type="text" id="width"/>
+				</div>
+				<div>
+					largeur : <input class="text-params" type="text" id="height"/>
+				</div>
+				<button id="sizeConfirm">Confirmer</button>
+			</div>
+		</ul>
+	</nav>
+
+	<!-- canvas -->
+	<div class="calque">
+		<img id="image"/>
+		<canvas class="canva" id="canvas"></canvas>
+	</div>
+
+	<script src="jquery.js"></script>
+	<script src="mypaint.js"></script>
+</body>
+</html>
